@@ -1,0 +1,115 @@
+.change{
+    background-color: rgb(93, 93, 204);
+    border-radius: 6px;
+}
+
+.text-style{
+    color: rgb(245, 242, 242);
+    text-align: center;
+    line-height: 3px;
+    padding-top: 35px;
+
+}
+.text-change{
+    color: rgb(202, 192, 192);
+    text-align: center;
+    padding-bottom: 16px;
+}
+.mee{
+    text-align: center;
+    color: rgb(132, 123, 123);
+}
+.Hi{
+    text-align: center;
+}
+.alter{
+    width: 150px;
+    height: 150px;
+    border-radius: 200px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+.hi{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+.skills{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.picture-style{
+    width: 150px;
+    padding: 20px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px gray;
+    cursor: pointer;
+    
+}
+.picture{
+    width: 100px;
+    height: 100px;
+}
+.picture-style:hover{
+    opacity: 0.6;
+}
+.project{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.project-style{
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 5px 8px grey;
+}
+.project-text{
+    font-size: 17px;
+}
+.project-button{
+    background-color: rgb(55, 55, 140);
+    color: white;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.project-button:hover{
+    opacity: 0.6;
+}
+.project-button:active{
+    background-color: brown;
+    color: white;
+}
+.email-style{
+    font-size: 16px;
+    text-align: center;
+}
+.button-style{
+    text-align: center;
+}
+.button-me{
+    background-color: rgb(59, 59, 146);
+    color: white;
+    border-radius: 6px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+.button-me:hover{
+    opacity: 0.6;
+}
+.button-me:active{
+    background-color: brown;
+    color: white;
+}
+
