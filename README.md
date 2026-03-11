@@ -1,2 +1,2 @@
-# Mini-project
-html css small project
+# protfolia
+simple practice code 
