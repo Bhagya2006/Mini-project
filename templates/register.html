@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-container-wrapper">
+    <div class="card form-card">
+        <h2>Register</h2>
+        <form action="{{ url_for('register') }}" method="POST">
+            <div class="form-group">
+                <input type="text" name="user_id" id="user_id" placeholder="User ID" required class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <input type="password" name="password" id="password" placeholder="Password" required class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="Name" required class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="contact" id="contact" placeholder="Contact" required class="form-control">
+            </div>
+            
+            <button type="submit" class="btn-primary btn-block">Register</button>
+            <div style="text-align: center; margin-top: 1rem;">
+                <p>Already have an account? <a href="{{ url_for('login') }}" style="color: var(--primary-color); font-weight: 500;">Login here</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

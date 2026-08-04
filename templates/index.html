@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <h2>All Products</h2>
+</div>
+
+<div class="products-grid">
+    {% for product in products %}
+    <div class="product-card">
+        <div class="product-image-container">
+            <img src="{{ url_for('static', filename='uploads/' + product.image_filename) }}" alt="{{ product.name }}" class="product-image">
+        </div>
+        <div class="product-info">
+            <h4 class="product-title">{{ product.name.upper() }}</h4>
+            <p class="product-price">₹{{ "%.0f"|format(product.price) }}</p>
+            <p class="product-contact">Contact: {{ product.contact }}</p>
+            <p class="product-category">Category: {{ product.category }}</p>
+            
+            <form action="{{ url_for('delete_product', id=product.id) }}" method="POST" class="delete-form">
+                <button type="submit" class="btn-delete">Delete Product</button>
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <div class="no-products">
+        <p>No products available yet. Add some!</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

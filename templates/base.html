@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Mini Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation (Only show if logged in) -->
+        {% if session.get('user_id') %}
+        <aside class="sidebar">
+            <h3 class="menu-title">Menu</h3>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}" class="active"><span class="icon">🏠</span> Home</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Gadgets</a></li>
+                <li><a href="#">Handcraft</a></li>
+            </ul>
+            
+            <h3 class="menu-title" style="margin-top: 2rem;">Admin</h3>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('add_product') }}">Add Product</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout ({{ session.get('name') }})</a></li>
+            </ul>
+        </aside>
+        {% endif %}
+
+        <!-- Main Content Area -->
+        <main class="main-content" {% if not session.get('user_id') %}style="margin-left: 0;"{% endif %}>
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <div class="flash-messages">
+                {% for category, message in messages %}
+                  <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+</body>
+</html>

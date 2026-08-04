@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-container-wrapper">
+    <div class="card form-card">
+        <h2>Add Product</h2>
+        <form action="{{ url_for('add_product') }}" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <select name="category" id="category" required class="form-control">
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Books">Books</option>
+                    <option value="Gadgets">Gadgets</option>
+                    <option value="Handcraft">Handcraft</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="Product Name (e.g. WATCH)" required class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <input type="number" name="price" id="price" placeholder="Price (e.g. 2500)" required class="form-control" step="0.01">
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="contact" id="contact" placeholder="Contact Number (e.g. 8869503145)" required class="form-control">
+            </div>
+            
+            <div class="form-group file-input-group">
+                <input type="file" name="image" id="image" required class="form-control file-input" accept="image/*">
+            </div>
+            
+            <button type="submit" class="btn-primary btn-block">Add Product</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
